@@ -6,37 +6,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>MeNotes | Edit Note </title>
+    <title>MeNotes | Edit </title>
     <link rel="stylesheet" href="static\style.css">
+    <script src="https://kit.fontawesome.com/6186cc3011.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="maingrid">
         <div class="header">
-            <div class="logo">
-                <a href="/">MeNotes</a>
-            </div>
-
+            <div class="logo"><a href="/">MeNotes</a></div>
             <div class="login"><button type="button" class="btn btn-outline-light"><a href="/login">Login</a> </button></div>
         </div>
-        <div class="sidebar paragraph">
-            My Notes
+        <div class="sidebar">
+            <div class="heading">Add Note &nbsp;&nbsp;
+                <a href="/add-note"><i class="far fa-plus-square"></i></a>
+            </div>
+            <div class="note-s">
+                <div class="note-title">Python</div>
+                <div class="timestamp">12/29/2021</div>
+                <br>
+                <button type="button" class="btn btn-outline-dark">View</button>
+                <button type="button" class="btn btn-outline-dark">Delete</button>
+            </div>
+            <div class="note-s">
+                <div class="note-title">Python</div>
+                <div class="timestamp">12/29/2021</div>
+                <br>
+                <button type="button" class="btn btn-outline-dark">View</button>
+                <button type="button" class="btn btn-outline-dark">Delete</button>
+            </div>
+            <div class="note-s">
+                <div class="note-title">Python</div>
+                <div class="timestamp">12/29/2021</div>
+                <br>
+                <button type="button" class="btn btn-outline-dark">View</button>
+                <button type="button" class="btn btn-outline-dark">Delete</button>
+            </div>
         </div>
-        <div class="contentbar">
-            <form class="note">
-                <div class="note-title">Infuse</div>
-                <textarea class="note-body" rows="20" columns="200" width="auto">Infuse your life with action. Don't wait for it to happen. Make it happen. Make your own future. Make your own hope. Make your own love. And whatever your beliefs, honor your creator, not by passively waiting for grace to come down from
-                    upon high, but by doing what you can to make grace happen... yourself, right now, right down here on Earth.
-                </textarea>
-                <div class="note-timestamp ">29/12/2021</div>
-                <input type="submit " class="btn btn-outline-dark " value="Edit ">
-                <button type="button " class="btn btn-outline-dark ">Go Back</button>
-            </form>
-        </div>
-        <div class="footer paragraph ">
-            <div class="logo heading "><a href="/ ">MeNotes</a></div>
-            <div class="about title ">About Us</div>
-            <div class="Support title ">Support</div>
+        <form method="POST" class="contentbar add-note">
+
+            <input type='text' placeholder="Note Title" name="note-title" class="note-title"><br>
+            <textarea class="note-body" rows="10" cols="80">
+                Python and its broad variety of libraries are very well suited to develop customized machine learning tools which tackle the complex challenges posed by financial time series.Python is powerful... and fast; plays well with others; runs everywhere;
+                is friendly & easy to learn; is Open. These are some of the reasons people who use Python would rather not use anything else.
+            </textarea>
+            <br><br>
+            <input type="submit" class="btn btn-outline-dark" value="Save">
+            <input type="button" class="btn btn-outline-dark" value='Discard'>
+        </form>
+
+        <div class="footer">
+            <div class="logo"><a href="/">MeNotes</a></div>
+            <div class="logo"><a href="/">About</a></div>
+            <div class="logo"><a href="/">Support</a></div>
         </div>
     </div>
 </body>

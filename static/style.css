@@ -27,7 +27,7 @@ cursive;
     font-family: 'Poiret One', cursive;
     flex-direction: row column;
     justify-content: space-between;
-    padding: 15px 5px;
+    padding: 15px 25px;
 }
 
 .sidebar {
@@ -57,6 +57,7 @@ cursive;
     padding-left: 20px;
     padding-top: 30px;
     display: flex-box;
+    overflow: scroll;
 }
 
 .footer {
@@ -135,10 +136,28 @@ form {
     align-items: center;
     font-size: large;
     margin: 30% 0 30% 100%;
+    border: 1px solid rgb(39, 39, 35);
+    width: auto;
 }
 
 form input {
     padding: 15px 10px;
-    margin: 25px 0 0 25px;
+    margin: 25px 0 0 20px;
     max-width: 72em;
+    max-height: 10em;
+}
+
+.add-note {
+    font-size: medium;
+}
+
+.add-note .note-title {
+    transform: scale(0.7);
+    margin-left: -5%;
+    max-width: 100%;
+}
+
+.add-note .note-body {
+    transform: scale(0.94);
+    border: 1px solid rgb(39, 39, 35);
 }

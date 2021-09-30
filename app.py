@@ -20,7 +20,7 @@ def login():
 
 @app.route('/add-note')
 def add():
-    return render_template('login.html')
+    return render_template('addnote.html')
 
 
 if __name__ == '__main__':
