@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&family=Philosopher&family=Poiret+One&family=Righteous&family=Sacramento&display=swap');
+
+/*
+font-family: 'Josefin Sans',
+sans-serif;
+font-family: 'Philosopher',
+sans-serif;
+font-family: 'Poiret One',
+cursive;
+font-family: 'Righteous',
+cursive;
+font-family: 'Sacramento',
+cursive;
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.header {
+    background: rgb(243, 88, 135);
+    display: flex;
+    grid-area: header;
+    height: 10vh;
+    width: 100%;
+    font-family: 'Poiret One', cursive;
+    flex-direction: row column;
+    justify-content: space-between;
+    padding: 15px 5px;
+}
+
+.sidebar {
+    background: rgb(39, 39, 35);
+    grid-area: sidebar;
+    display: flex;
+    height: 70vh;
+    margin: 15px;
+    box-shadow: 1px 1px 9px 1.5px rgba(39, 39, 35, 0.4);
+    transform: scale(0.9);
+    flex-direction: column;
+    justify-content: space-around;
+    color: whitesmoke;
+    padding: 45px 5px 10px 10px;
+    font-family: 'Philosopher', sans-serif;
+    align-items: center;
+    overflow-y: scroll;
+    flex-wrap: unset;
+}
+
+.contentbar {
+    grid-area: contentbar;
+    height: 70vh;
+    margin: 15px;
+    box-shadow: 1px 1px 9px 1.5px rgba(39, 39, 35, 0.4);
+    transform: scale(0.9);
+    padding-left: 20px;
+    padding-top: 30px;
+    display: flex-box;
+}
+
+.footer {
+    background: rgb(39, 39, 35);
+    grid-area: footer;
+    display: flex;
+    height: 20vh;
+    font-family: 'Poiret One', cursive;
+    flex-direction: row column;
+    justify-content: space-between;
+    padding: 15px 5px;
+}
+
+.maingrid {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-areas: "header header" "sidebar contentbar" "footer footer";
+}
+
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+button:hover>a {
+    color: rgb(39, 39, 35);
+}
+
+.logo {
+    font-size: large;
+}
+
+.note-title {
+    color: rgb(243, 88, 135);
+    font-family: 'Righteous', cursive;
+    font-size: xx-large;
+}
+
+.note-body,
+.timestamp {
+    padding-top: 10px;
+    color: rgb(39, 39, 35);
+    font-family: 'Philosopher', sans-serif;
+}
+
+.btn {
+    position: relative;
+    bottom: 0px;
+}
+
+.note-s {
+    background: whitesmoke;
+    transform: scale(0.8);
+    width: 80%;
+    padding: 10px 0 10px 10px;
+    border: 1px inset whitesmoke;
+    border-radius: 5px;
+}
+
+.heading {
+    margin-top: 60px;
+}
+
+.far:hover {
+    transform: scale(1.2);
+    transition-duration: 0.4s;
+    color: rgb(243, 88, 135);
+}
+
+
+/*Login Styles*/
+
+form {
+    display: flex-box;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    margin: 30% 0 30% 100%;
+}
+
+form input {
+    padding: 15px 10px;
+    margin: 25px 0 0 25px;
+    max-width: 72em;
+}
