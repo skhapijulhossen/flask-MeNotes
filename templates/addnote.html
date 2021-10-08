@@ -44,15 +44,14 @@
                 <button type="button" class="btn btn-outline-dark">Delete</button>
             </div>
         </div>
-        <form method="POST" class="contentbar add-note">
+        <form action="/add-note" method="POST" class="contentbar add-note">
 
-            <input type='text' placeholder="Note Title" name="note-title" class="note-title"><br>
-            <textarea class="note-body" rows="10" cols="80">
+            <input type='text' placeholder="Note Title" name="title" class="note-title"><br>
+            <textarea class="note-body" name="body" rows="10" cols="80">
                 Python and its broad variety of libraries are very well suited to develop customized machine learning tools which tackle the complex challenges posed by financial time series.Python is powerful... and fast; plays well with others; runs everywhere;is friendly & easy to learn; is Open. These are some of the reasons people who use Python would rather not use anything else.
             </textarea>
             <br><br>
             <input type="submit" class="btn btn-outline-dark" value="Save">
-            <input type="button" class="btn btn-outline-dark" value='Discard'>
         </form>
 
         <div class="footer">

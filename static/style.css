@@ -35,17 +35,17 @@ cursive;
     grid-area: sidebar;
     display: flex;
     height: 70vh;
-    margin: 15px;
+    margin: 15px 3px;
     box-shadow: 1px 1px 9px 1.5px rgba(39, 39, 35, 0.4);
     transform: scale(0.9);
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: stretch;
     color: whitesmoke;
-    padding: 45px 5px 10px 10px;
+    padding: 5px 5px 10px 10px;
     font-family: 'Philosopher', sans-serif;
     align-items: center;
     overflow-y: scroll;
-    flex-wrap: unset;
+    
 }
 
 .contentbar {
@@ -111,7 +111,7 @@ button:hover>a {
 .note-s {
     background: whitesmoke;
     transform: scale(0.8);
-    width: 80%;
+    width: 90%;
     padding: 10px 0 10px 10px;
     border: 1px inset whitesmoke;
     border-radius: 5px;

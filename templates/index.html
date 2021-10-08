@@ -15,45 +15,60 @@
     <div class="maingrid">
         <div class="header">
             <div class="logo"><a href="/">MeNotes</a></div>
+            {% if user %}
+            <div class="login"><button type="button" class="btn btn-outline-light"><a href="/logout">Logout</a> </button></div>
+            {% else %}
             <div class="login"><button type="button" class="btn btn-outline-light"><a href="/login">Login</a> </button></div>
+            {% endif %}
         </div>
         <div class="sidebar">
             <div class="heading">Add Note &nbsp;&nbsp;
                 <a href="/add-note"><i class="far fa-plus-square"></i></a>
             </div>
-            <div class="note-s">
-                <div class="note-title">Python</div>
-                <div class="timestamp">12/29/2021</div>
-                <br>
-                <button type="button" class="btn btn-outline-dark">View</button>
-                <button type="button" class="btn btn-outline-dark">Delete</button>
-            </div>
-            <div class="note-s">
-                <div class="note-title">Python</div>
-                <div class="timestamp">12/29/2021</div>
-                <br>
-                <button type="button" class="btn btn-outline-dark">View</button>
-                <button type="button" class="btn btn-outline-dark">Delete</button>
-            </div>
-            <div class="note-s">
-                <div class="note-title">Python</div>
-                <div class="timestamp">12/29/2021</div>
-                <br>
-                <button type="button" class="btn btn-outline-dark">View</button>
-                <button type="button" class="btn btn-outline-dark">Delete</button>
-            </div>
+            {% if notes %}
+                {% for note in notes %}
+                    <div class="note-s">
+                        <div class="note-title">{{note.title}}</div>
+                        <div class="timestamp">{{note.date}}</div>
+                        <br>
+                        <a class="btn btn-outline-dark" href="/view/{{note.id}}" >View</a>
+                        <a class="btn btn-outline-dark" href="/delete/{{note.id}}" >Delete</a>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            
         </div>
-        <div class="contentbar">
+        {% if notes %}
 
-            <div class="note-title">Python</div>
-            <div class="note-body">Python and its broad variety of libraries are very well suited to develop customized machine learning tools which tackle the complex challenges posed by financial time series.Python is powerful... and fast; plays well with others; runs everywhere;
-                is friendly & easy to learn; is Open. These are some of the reasons people who use Python would rather not use anything else.</div>
-            <div class="timestamp">12/29/2021</div>
-            <br><br>
-            <button type="button" class="btn btn-outline-dark">Edit</button>
-            <button type="button" class="btn btn-outline-dark">Delete</button>
-        </div>
+            <div class="contentbar">
+                {% if viewNote %}
+                    <div class="note-title">{{viewNote.title}}</div>
+                    <div class="note-body">{{viewNote.body}}</div>
+                    <div class="timestamp">{{viewNote.date}}</div>
+                    <br><br>
+                    <a class="btn btn-outline-dark" href="/view/{{viewNote.id}}">View</a>
+                    <a class="btn btn-outline-dark" href="/delete/{{viewNote.id}}">Delete</a>
+                {% endif %}
+                {% if not viewNote %}
+                    <div class="note-title">{{notes[0].title}}</div>
+                    <div class="note-body">{{notes[0].body}}</div>
+                    <div class="timestamp">{{notes[0].date}}</div>
+                    <br><br>
+                    <a class="btn btn-outline-dark" href="/view/{{notes[0].id}}" style="color:black;">View</a>
+                    <a class="btn btn-outline-dark" href="/delete/{{notes[0].id}}">Delete</a>
+                {% endif %}
+            </div>
+        {% endif %}
+        {% if not notes %}
+            <div class="contentbar">
 
+                <div class="note-title">Python</div>
+                <div class="note-body" style="font-family: 'Sacramento',cursive; font-size: xx-large;overflow: hidden;">Python and its broad variety of libraries are very well suited to develop customized machine learning tools which tackle the complex challenges posed by financial time series.Python is powerful... and fast; plays well with others; runs everywhere;
+                    is friendly & easy to learn; is Open. These are some of the reasons people who use Python would rather not use anything else.</div>
+                <div class="timestamp">12/29/2021</div>
+                <br><br>
+            </div>
+        {% endif %}
         <div class="footer">
             <div class="logo"><a href="/">MeNotes</a></div>
             <div class="logo"><a href="/">About</a></div>
